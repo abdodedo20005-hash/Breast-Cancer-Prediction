@@ -1,0 +1,10 @@
+# Runtime deps for the API / Docker image.
+# IMPORTANT: pin scikit-learn (and lightgbm/xgboost if used) to the EXACT versions you trained with.
+# Check with:  pip freeze | grep -i -E "scikit-learn|joblib|numpy|pandas"
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+numpy
+pandas
+joblib
+scikit-learn==1.6.1

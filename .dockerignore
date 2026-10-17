@@ -1,0 +1,10 @@
+.git
+.github
+.vscode
+data
+notebooks
+scripts
+tests
+__pycache__
+*.pyc
+.venv

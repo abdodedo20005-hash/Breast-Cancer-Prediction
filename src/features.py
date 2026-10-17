@@ -1,0 +1,24 @@
+"""Feature definitions (Wisconsin Diagnostic Breast Cancer dataset, 30 features).
+
+ORDER MATTERS: it must match the column order used when the model was trained.
+"""
+
+_BASE = [
+    "radius", "texture", "perimeter", "area", "smoothness",
+    "compactness", "concavity", "concave_points", "symmetry", "fractal_dimension",
+]
+FEATURES = [f"{b}_{g}" for g in ("mean", "se", "worst") for b in _BASE]
+
+# Real rows from the Wisconsin dataset, used for docs / demo / tests.
+_MALIGNANT = [
+    17.99, 10.38, 122.8, 1001.0, 0.1184, 0.2776, 0.3001, 0.1471, 0.2419, 0.07871,
+    1.095, 0.9053, 8.589, 153.4, 0.006399, 0.04904, 0.05373, 0.01587, 0.03003, 0.006193,
+    25.38, 17.33, 184.6, 2019.0, 0.1622, 0.6656, 0.7119, 0.2654, 0.4601, 0.1189,
+]
+_BENIGN = [
+    13.54, 14.36, 87.46, 566.3, 0.09779, 0.08129, 0.06664, 0.04781, 0.1885, 0.05766,
+    0.2699, 0.7886, 2.058, 23.56, 0.008462, 0.0146, 0.02387, 0.01315, 0.0198, 0.0023,
+    15.11, 19.26, 99.7, 711.2, 0.144, 0.1773, 0.239, 0.1288, 0.2977, 0.07259,
+]
+EXAMPLE_MALIGNANT = dict(zip(FEATURES, _MALIGNANT))
+EXAMPLE_BENIGN = dict(zip(FEATURES, _BENIGN))
